@@ -27,6 +27,8 @@
     <div class="alert alert-danger" role="alert" style="margin-top: 10px;">
          {{ session('loginFail') }}
     </div>
+</div>
+</div>
 @endif
 @if(session()->has('successLogout'))
 <div class="row">
@@ -34,8 +36,7 @@
     <div class="alert alert-success" style="margin-top: 1rem;" role="alert">
     {{ session('successLogout') }}
 </div>
-
-    </div>
+</div>
 </div>
 @endif
 
@@ -46,6 +47,7 @@
     <div class="alert alert-success" style="margin-top: 1rem;" role="alert">
     {{ session('successCreateAcc') }}
 </div>
+@endif
   <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
       <div class="col-12">

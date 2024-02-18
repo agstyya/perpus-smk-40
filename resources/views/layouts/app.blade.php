@@ -33,20 +33,21 @@
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="./pages/dashboard.html">
+      @if (auth()->user()->role === 'admin')
+        <li class="nav-item @if (request()->segment(1) === 'admindashboard') active @endif" style="color: #6777ef">
+          <a class="nav-link active" href="/admindashboard">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
+            <span class="nav-link-text ms-1" style="color: #6777ef">Dashboard </span>
           </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="./pages/tables.html">
+        </li> 
+        <li class="nav-item @if (request()->segment(1) === 'users-management') active @endif">
+          <a class="nav-link active" href="/users-management">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1" @if (request()->segment(1) === 'users-management') style="color: #6777ef;" @endif>Data Pengguna</span>
           </a>
         </li>
         <li class="nav-item">
@@ -73,6 +74,7 @@
             <span class="nav-link-text ms-1">RTL</span>
           </a>
         </li>
+      @endif
   </aside>
   <main class="main-content position-relative border-radius-lg">
     <!-- Navbar -->

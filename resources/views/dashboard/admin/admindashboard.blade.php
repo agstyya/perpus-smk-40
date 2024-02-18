@@ -8,9 +8,9 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Username {{Auth()->user()->name}}</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Account</p>
                     <h5 class="font-weight-bolder">
-                      $53,000
+                    {{ $adminCount }}
                     </h5>
                     <p class="mb-0">
                       <span class="text-success text-sm font-weight-bolder">+55%</span>
